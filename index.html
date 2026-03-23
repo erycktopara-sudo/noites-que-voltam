@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noites Que Voltam — Seu bebê dormindo, você descansando</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #0D1B2A;
+    --azul-medio: #1A3A5C;
+    --dourado: #C9973A;
+    --dourado-claro: #F0C864;
+    --creme: #FDF6EC;
+    --branco: #FFFFFF;
+    --cinza: #555555;
+    --verde: #2E7D32;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Lato', sans-serif; background: #fff; color: #222; font-size: 16px; line-height: 1.6; }
+
+.topo-urgencia { background: var(--dourado); color: var(--azul); text-align: center; padding: 10px 16px; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; }
+
+.hero { background: linear-gradient(160deg, #0D1B2A 0%, #1A3A5C 100%); color: white; padding: 48px 20px 56px; text-align: center; }
+.hero-tag { display: inline-block; background: rgba(201,151,58,0.2); color: var(--dourado-claro); border: 1px solid var(--dourado); border-radius: 20px; padding: 5px 16px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 7vw, 42px); font-weight: 900; line-height: 1.2; margin-bottom: 16px; color: #fff; }
+.hero h1 span { color: var(--dourado-claro); }
+.hero-sub { font-size: 17px; color: rgba(255,255,255,0.82); max-width: 480px; margin: 0 auto 32px; line-height: 1.6; }
+.btn-hero { display: block; background: linear-gradient(135deg, var(--dourado) 0%, #E8B54A 100%); color: var(--azul); font-family: 'Lato', sans-serif; font-weight: 900; font-size: 17px; padding: 18px 28px; border-radius: 50px; text-decoration: none; max-width: 400px; margin: 0 auto; box-shadow: 0 8px 30px rgba(201,151,58,0.4); animation: pulse 2.5s ease-in-out infinite; }
+.hero-garantia { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.55); }
+
+section { padding: 48px 20px; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dourado); margin-bottom: 8px; }
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 5.5vw, 32px); font-weight: 700; line-height: 1.3; color: var(--azul); margin-bottom: 16px; }
+p { margin-bottom: 14px; color: #333; }
+
+.dor { background: var(--creme); border-top: 3px solid var(--dourado); }
+.dor-lista { list-style: none; margin: 24px 0; }
+.dor-lista li { padding: 14px 16px 14px 48px; position: relative; background: white; border-radius: 10px; margin-bottom: 10px; font-size: 15px; color: #222; box-shadow: 0 2px 8px rgba(0,0,0,0.06); line-height: 1.4; }
+.dor-lista li::before { content: 'X'; position: absolute; left: 14px; top: 13px; font-size: 15px; font-weight: 900; color: #c0392b; }
+.dor-destaque { background: var(--azul); color: white; border-radius: 12px; padding: 20px; font-size: 16px; font-weight: 700; text-align: center; line-height: 1.5; margin-top: 20px; }
+
+.virada { background: white; }
+.virada-box { background: linear-gradient(135deg, #0D1B2A, #1A3A5C); color: white; border-radius: 16px; padding: 28px 22px; margin-top: 20px; }
+.virada-box p { color: rgba(255,255,255,0.85); margin-bottom: 12px; }
+.virada-box strong { color: var(--dourado-claro); }
+
+.metodo { background: var(--azul); color: white; text-align: center; }
+.metodo h2 { color: white; }
+.metodo p { color: rgba(255,255,255,0.82); }
+.metodo-nome { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--dourado-claro); font-weight: 900; margin: 20px 0 8px; }
+.fases { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; text-align: left; }
+.fase { background: rgba(255,255,255,0.07); border: 1px solid rgba(201,151,58,0.3); border-radius: 12px; padding: 16px 14px; }
+.fase-num { font-size: 11px; color: var(--dourado); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+.fase-nome { font-size: 13px; font-weight: 700; color: white; line-height: 1.3; }
+
+.recebe { background: var(--creme); }
+.recebe-item { display: flex; align-items: flex-start; gap: 14px; background: white; border-radius: 12px; padding: 18px 16px; margin-bottom: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+.recebe-icone { width: 44px; height: 44px; background: linear-gradient(135deg, var(--azul), var(--azul-medio)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.recebe-texto strong { display: block; font-size: 15px; color: var(--azul); margin-bottom: 3px; }
+.recebe-texto span { font-size: 13px; color: #666; }
+
+.como { background: white; }
+.passos { margin-top: 24px; }
+.passo { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+.passo-num { width: 38px; height: 38px; background: var(--dourado); color: var(--azul); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+.passo-texto strong { display: block; font-size: 15px; color: var(--azul); font-weight: 700; margin-bottom: 3px; }
+.passo-texto span { font-size: 14px; color: #555; }
+
+.beneficios { background: linear-gradient(160deg, #0D1B2A, #1A3A5C); color: white; }
+.beneficios h2 { color: white; }
+.beneficio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.beneficio { background: rgba(255,255,255,0.07); border-radius: 12px; padding: 18px 14px; text-align: center; border: 1px solid rgba(201,151,58,0.2); }
+.beneficio-icone { font-size: 28px; margin-bottom: 8px; }
+.beneficio-texto { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.4; font-weight: 600; }
+
+.oferta { background: var(--creme); text-align: center; }
+.oferta-box { background: white; border-radius: 20px; padding: 32px 22px; box-shadow: 0 8px 40px rgba(0,0,0,0.1); border: 2px solid var(--dourado); max-width: 480px; margin: 0 auto; }
+.oferta-de { font-size: 14px; color: #999; text-decoration: line-through; margin-bottom: 4px; }
+.oferta-por { font-size: 13px; color: #555; margin-bottom: 4px; }
+.oferta-preco { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; color: var(--azul); line-height: 1; margin-bottom: 4px; }
+.oferta-preco span { font-size: 24px; vertical-align: super; }
+.oferta-comparacao { font-size: 13px; color: #777; margin: 12px 0 24px; font-style: italic; }
+.oferta-lista { list-style: none; text-align: left; margin-bottom: 28px; }
+.oferta-lista li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #333; display: flex; align-items: center; gap: 10px; }
+.oferta-lista li::before { content: 'V'; color: var(--verde); font-weight: 900; font-size: 14px; flex-shrink: 0; }
+
+.btn-comprar { display: block; background: linear-gradient(135deg, var(--dourado) 0%, #E8B54A 100%); color: var(--azul); font-family: 'Lato', sans-serif; font-weight: 900; font-size: 17px; padding: 20px 24px; border-radius: 50px; text-decoration: none; box-shadow: 0 8px 30px rgba(201,151,58,0.4); letter-spacing: 0.3px; line-height: 1.3; margin-bottom: 12px; }
+.btn-sub { font-size: 12px; color: #888; text-align: center; }
+
+.garantia { background: white; text-align: center; }
+.garantia-box { background: var(--creme); border-radius: 16px; padding: 28px 22px; border: 2px dashed var(--dourado); max-width: 480px; margin: 0 auto; }
+.garantia-emoji { font-size: 48px; margin-bottom: 12px; }
+.garantia-box h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--azul); margin-bottom: 12px; }
+.garantia-box p { font-size: 14px; color: #555; }
+
+.urgencia-final { background: var(--azul); color: white; text-align: center; padding: 40px 20px; }
+.urgencia-final h2 { color: white; margin-bottom: 12px; }
+.urgencia-final p { color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+
+footer { background: #0a1520; color: rgba(255,255,255,0.4); text-align: center; padding: 24px 20px; font-size: 12px; line-height: 1.8; }
+
+.divisor { height: 3px; background: linear-gradient(90deg, transparent, var(--dourado), transparent); }
+
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+</style>
+
+</head>
+<body>
+
+<div class="topo-urgencia">
+  Oferta especial por tempo limitado — Garanta o seu agora
+</div>
+
+<section class="hero">
+  <div class="hero-tag">Metodo Comprovado</div>
+  <h1>Seu bebê vai dormir.<br><span>E as suas noites vão voltar.</span></h1>
+  <p class="hero-sub">O método passo a passo que organiza o sono do seu bebê de forma gentil — e te devolve o descanso que você merece.</p>
+  <a href="https://pay.kiwify.com.br/vrC6k6X" class="btn-hero">QUERO MINHAS NOITES DE VOLTA</a>
+  <p class="hero-garantia">Garantia de 7 dias | Acesso imediato | R$ 67,00</p>
+</section>
+
+<div class="divisor"></div>
+
+<section class="dor">
+  <p class="section-label">Você se identifica?</p>
+  <h2>Se você está lendo isso, provavelmente está exausta.</h2>
+  <p>Não é fraqueza. É que ninguém te deu um caminho claro. E seu corpo está pedindo socorro.</p>
+  <ul class="dor-lista">
+    <li>Seu bebê acorda múltiplas vezes por noite — e você não sabe mais o que fazer</li>
+    <li>Você já tentou de tudo e nada funciona de verdade</li>
+    <li>Está no limite do cansaço e da paciência</li>
+    <li>Sente culpa por não conseguir "resolver" o sono do seu filho</li>
+    <li>Tem medo de que isso nunca vai melhorar</li>
+  </ul>
+  <div class="dor-destaque">
+    O problema não é você. E também não é o seu bebê.<br>
+    <span style="color:var(--dourado-claro)">O que falta é um método.</span>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<section class="virada">
+  <p class="section-label">A verdade que ninguém conta</p>
+  <h2>Por que nada funcionou até agora?</h2>
+  <div class="virada-box">
+    <p>Porque a maioria dos conselhos que você recebe — da internet, da sogra, do grupo do WhatsApp — são dicas soltas, sem contexto e sem sequência.</p>
+    <p>O sono do bebê <strong>tem fases, tem biologia, tem um motivo</strong> para funcionar do jeito que funciona.</p>
+    <p>Quando você entende o <strong>porquê</strong> de cada coisa, tudo muda. Você para de tentar no escuro e começa a agir com direção.</p>
+    <p style="margin-bottom:0"><strong>Isso é exatamente o que o Noites Que Voltam entrega.</strong></p>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<section class="metodo">
+  <p class="section-label" style="color:var(--dourado)">A solucao</p>
+  <h2>Apresentando o</h2>
+  <div class="metodo-nome">Noites Que Voltam</div>
+  <p>Um guia completo, baseado em neurociencia e acolhimento materno, que organiza o sono do seu bebê do nascimento aos 12 meses — de forma gentil, sem deixar chorar, sem trauma.</p>
+  <div class="fases">
+    <div class="fase"><div class="fase-num">FASE 1</div><div class="fase-nome">Neurociencia do Sono</div></div>
+    <div class="fase"><div class="fase-num">FASE 2</div><div class="fase-nome">Ambiente de Ouro</div></div>
+    <div class="fase"><div class="fase-num">FASE 3</div><div class="fase-nome">Janelas e Rotina</div></div>
+    <div class="fase"><div class="fase-num">FASE 4</div><div class="fase-nome">Ritual da Noite</div></div>
+    <div class="fase"><div class="fase-num">FASE 5</div><div class="fase-nome">Sonecas de Ouro</div></div>
+    <div class="fase"><div class="fase-num">FASE 6</div><div class="fase-nome">Autonomia do Sono</div></div>
+    <div class="fase"><div class="fase-num">FASE 7</div><div class="fase-nome">Regressoes e Saltos</div></div>
+    <div class="fase"><div class="fase-num">FASE 8</div><div class="fase-nome">Plano de 7 Dias</div></div>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<section class="recebe">
+  <p class="section-label">O que esta incluso</p>
+  <h2>Tudo que você vai receber</h2>
+  <div class="recebe-item">
+    <div class="recebe-icone">📖</div>
+    <div class="recebe-texto"><strong>Guia Completo Noites Que Voltam</strong><span>12 capitulos com o método completo do nascimento aos 12 meses. Conteúdo real, aplicavel na mesma noite.</span></div>
+  </div>
+  <div class="recebe-item">
+    <div class="recebe-icone">📅</div>
+    <div class="recebe-texto"><strong>Plano de Acao de 7 Dias</strong><span>Um passo por dia, do ambiente ao sono autonomo. Simples e direto.</span></div>
+  </div>
+  <div class="recebe-item">
+    <div class="recebe-icone">📊</div>
+    <div class="recebe-texto"><strong>Tabela de Janelas de Sono</strong><span>O mapa completo por idade — quantas sonecas, qual intervalo, qual horario ideal.</span></div>
+  </div>
+  <div class="recebe-item">
+    <div class="recebe-icone">🧠</div>
+    <div class="recebe-texto"><strong>Bônus: Guia de Sinais de Alerta</strong><span>Como identificar problemas antes que virem crises. Tranquilidade total.</span></div>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<section class="beneficios">
+  <p class="section-label" style="color:var(--dourado)">Resultados reais</p>
+  <h2>O que você vai conseguir</h2>
+  <div class="beneficio-grid">
+    <div class="beneficio">
+      <div class="beneficio-icone">😴</div>
+      <div class="beneficio-texto">Bebê dormindo melhor em dias</div>
+    </div>
+    <div class="beneficio">
+      <div class="beneficio-icone">💤</div>
+      <div class="beneficio-texto">Suas noites de volta</div>
+    </div>
+    <div class="beneficio">
+      <div class="beneficio-icone">🧘</div>
+      <div class="beneficio-texto">Paz mental e segurança</div>
+    </div>
+    <div class="beneficio">
+      <div class="beneficio-icone">❤️</div>
+      <div class="beneficio-texto">Relação melhor com seu filho</div>
+    </div>
+    <div class="beneficio">
+      <div class="beneficio-icone">⚡</div>
+      <div class="beneficio-texto">Energia para viver</div>
+    </div>
+    <div class="beneficio">
+      <div class="beneficio-icone">✨</div>
+      <div class="beneficio-texto">Você descansada de novo</div>
+    </div>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<section class="oferta">
+  <p class="section-label">Investimento</p>
+  <h2>Quanto custa recuperar suas noites?</h2>
+  <div class="oferta-box">
+    <p class="oferta-de">De: R$ 197,00</p>
+    <p class="oferta-por">Por apenas:</p>
+    <div class="oferta-preco">R$ <span>67</span></div>
+    <p class="oferta-comparacao">Menos de 1 café por dia durante 3 meses</p>
+    <ul class="oferta-lista">
+      <li>Acesso imediato ao guia completo</li>
+      <li>Plano de 7 dias pronto para aplicar</li>
+      <li>Tabela de janelas de sono</li>
+      <li>3 bônus exclusivos</li>
+      <li>Garantia de 7 dias</li>
+    </ul>
+    <a href="https://pay.kiwify.com.br/vrC6k6X" class="btn-comprar">GARANTIR MEU ACESSO AGORA</a>
+    <p class="btn-sub">Pagamento seguro | Acesso imediato</p>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<section class="garantia">
+  <p class="section-label">Sem risco</p>
+  <h2>Garantia de 7 dias</h2>
+  <div class="garantia-box">
+    <div class="garantia-emoji">🛡️</div>
+    <h3>Satisfação garantida</h3>
+    <p>Se em 7 dias você não se sentir melhor, devolvemos 100% do seu dinheiro. Sem perguntas. Sem burocracia. Você tem meu compromisso.</p>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<section class="urgencia-final">
+  <h2>Essa oferta não vai durar para sempre</h2>
+  <p>Cada vez mais mães descobrem o método. Em breve, o preço sobe. Garanta o seu agora.</p>
+  <a href="https://pay.kiwify.com.br/vrC6k6X" class="btn-comprar" style="margin-top: 20px;">QUERO MINHAS NOITES DE VOLTA</a>
+</section>
+
+<footer>
+  © 2026 Noites Que Voltam. Todos os direitos reservados.<br>
+  Este produto não é um substituto para aconselhamento médico profissional.
+</footer>
+
+</body>
+</html>
