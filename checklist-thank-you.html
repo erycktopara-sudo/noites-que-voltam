@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! Seu Checklist Chegou - Guia da Mãe Descansada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4c4 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .success-header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        .success-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 1s ease-in-out infinite;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #8b5a3c;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #a67c52;
+        }
+        
+        .confirmation-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #d4845c;
+        }
+        
+        .confirmation-card h2 {
+            color: #8b5a3c;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .confirmation-card p {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .steps-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .steps-section h3 {
+            color: #8b5a3c;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #d4845c;
+            padding-bottom: 15px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #faf7f2;
+            border-radius: 10px;
+            border-left: 4px solid #d4845c;
+        }
+        
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #d4845c 0%, #c97347 100%);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            color: #8b5a3c;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .step-content p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .benefits-box {
+            background: linear-gradient(135deg, #d4845c 0%, #c97347 100%);
+            border-radius: 15px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(212, 132, 92, 0.3);
+        }
+        
+        .benefits-box h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        
+        .benefit-item::before {
+            content: "✓";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4845c 0%, #c97347 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 132, 92, 0.3);
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 132, 92, 0.4);
+        }
+        
+        .secondary-button {
+            background: white;
+            color: #d4845c;
+            margin-top: 15px;
+            border: 2px solid #d4845c;
+        }
+        
+        .secondary-button:hover {
+            background: #faf7f2;
+        }
+        
+        .support-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .support-section h3 {
+            color: #8b5a3c;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .support-section p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+        
+        .email-link {
+            color: #d4845c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .email-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #8b5a3c;
+            border-top: 2px solid #e0d5c7;
+            margin-top: 50px;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .confirmation-card,
+            .steps-section,
+            .benefits-box,
+            .support-section {
+                padding: 25px;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-header">
+            <div class="success-icon">✓</div>
+            <h1>Parabéns! 🎉</h1>
+            <p class="subtitle">Seu Checklist da Noite Tranquila foi confirmado</p>
+        </div>
+        
+        <div class="confirmation-card">
+            <h2>Sua Compra Foi Confirmada!</h2>
+            <p>Obrigado por confiar em nós! Você acaba de dar um grande passo para organizar as noites do seu bebê.</p>
+            <p>Seu Checklist da Noite Tranquila está pronto para ser usado. Você receberá um email com todos os detalhes de acesso.</p>
+        </div>
+        
+        <div class="steps-section">
+            <h3>📋 Próximos Passos</h3>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Acesse seu Checklist</h4>
+                    <p>Você já tem acesso total ao seu checklist prático. Pode imprimir ou usar no celular!</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Personalize para sua Rotina</h4>
+                    <p>Adapte o checklist conforme a rotina específica do seu bebê. Cada criança é única!</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Implemente Gradualmente</h4>
+                    <p>Comece a usar o checklist e observe como as noites ficam mais organizadas e tranquilas.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Compartilhe Seus Resultados</h4>
+                    <p>Nos conte como o checklist está ajudando! Sua experiência é importante para nós.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="benefits-box">
+            <h3>💙 O que você vai conseguir com este checklist:</h3>
+            
+            <div class="benefit-item">Rotina noturna mais organizada e previsível</div>
+            <div class="benefit-item">Redução da ansiedade durante a noite</div>
+            <div class="benefit-item">Melhor qualidade de sono para o bebê</div>
+            <div class="benefit-item">Noites mais tranquilas para toda a família</div>
+            <div class="benefit-item">Confiança de que nada importante está sendo esquecido</div>
+        </div>
+        
+        <div class="support-section">
+            <h3>❓ Precisa de Ajuda?</h3>
+            <p>Se tiver dúvidas sobre como usar o checklist ou precisar de suporte, estamos aqui para ajudar!</p>
+            <p>Entre em contato conosco: <a href="mailto:suporte@maedescansada.com.br" class="email-link">suporte@maedescansada.com.br</a></p>
+        </div>
+        
+        <footer>
+            <p>💙 Desenvolvido com amor para mães que desejam noites mais tranquilas</p>
+            <p>© 2026 - Guia da Mãe Descansada</p>
+        </footer>
+    </div>
+</body>
+</html>

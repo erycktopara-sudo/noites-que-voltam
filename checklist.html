@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist da Noite Tranquila - Guia Prático para Mães</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4c4 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #8b5a3c;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #a67c52;
+            font-style: italic;
+        }
+        
+        .hero-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #d4845c;
+        }
+        
+        .hero-section h2 {
+            color: #8b5a3c;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .hero-section p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .checklist-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .checklist-section h3 {
+            color: #8b5a3c;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #d4845c;
+            padding-bottom: 15px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #faf7f2;
+            border-radius: 8px;
+            border-left: 4px solid #d4845c;
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            background: #f5e6d3;
+            transform: translateX(5px);
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            cursor: pointer;
+            accent-color: #d4845c;
+        }
+        
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 1.05em;
+            color: #555;
+        }
+        
+        .benefits-section {
+            background: linear-gradient(135deg, #d4845c 0%, #c97347 100%);
+            border-radius: 15px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(212, 132, 92, 0.3);
+        }
+        
+        .benefits-section h3 {
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        
+        .benefit-item::before {
+            content: "✓";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4845c 0%, #c97347 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 132, 92, 0.3);
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 132, 92, 0.4);
+        }
+        
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-section h3 {
+            color: #8b5a3c;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0d5c7;
+            padding-bottom: 20px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #8b5a3c;
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #8b5a3c;
+            border-top: 2px solid #e0d5c7;
+            margin-top: 50px;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .hero-section,
+            .checklist-section,
+            .faq-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Checklist da Noite Tranquila</h1>
+            <p class="subtitle">Guia prático para organizar a rotina noturna do seu bebê</p>
+        </header>
+        
+        <section class="hero-section">
+            <h2>Organize as Noites do Seu Bebê com Confiança</h2>
+            <p>Este checklist foi desenvolvido especialmente para mães que desejam criar uma rotina noturna estruturada e tranquila para seus bebês.</p>
+            <p>Com dicas práticas de higiene, alimentação, conforto e segurança, você terá um guia visual para não esquecer de nada importante.</p>
+        </section>
+        
+        <section class="checklist-section">
+            <h3>✓ Seu Checklist Prático</h3>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item1">
+                <label for="item1">Preparar o ambiente (luz baixa, temperatura confortável)</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item2">
+                <label for="item2">Trocar a fralda do bebê</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item3">
+                <label for="item3">Dar banho morno (se for noite de banho)</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item4">
+                <label for="item4">Aplicar hidratante e massagem relaxante</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item5">
+                <label for="item5">Alimentar o bebê (amamentação ou mamadeira)</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item6">
+                <label for="item6">Fazer arroto e verificar conforto</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item7">
+                <label for="item7">Colocar pijama confortável</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item8">
+                <label for="item8">Cantar uma música ou contar uma história</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item9">
+                <label for="item9">Colocar o bebê no berço com segurança</label>
+            </div>
+            
+            <div class="checklist-item">
+                <input type="checkbox" id="item10">
+                <label for="item10">Verificar monitor de bebê e iluminação</label>
+            </div>
+        </section>
+        
+        <section class="benefits-section">
+            <h3>Por que usar este checklist?</h3>
+            
+            <div class="benefit-item">Garante que nenhum passo importante seja esquecido</div>
+            <div class="benefit-item">Cria uma rotina consistente para o bebê</div>
+            <div class="benefit-item">Reduz a ansiedade das mães durante a noite</div>
+            <div class="benefit-item">Ajuda o bebê a reconhecer sinais de sono</div>
+            <div class="benefit-item">Melhora a qualidade do sono de toda a família</div>
+        </section>
+        
+        <section class="faq-section">
+            <h3>❓ Perguntas Frequentes</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">Como usar este checklist?</div>
+                <div class="faq-answer">Você pode imprimir este checklist e colocar na parede do quarto do bebê, ou usar a versão digital no seu celular. Marque cada item conforme completa durante a rotina noturna.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Preciso seguir exatamente nesta ordem?</div>
+                <div class="faq-answer">Não necessariamente! Adapte a ordem conforme a rotina do seu bebê. O importante é que todos os itens sejam realizados antes de colocar o bebê para dormir.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">E se meu bebê não seguir essa rotina?</div>
+                <div class="faq-answer">Cada bebê é único! Use este checklist como guia e adapte conforme as necessidades e preferências do seu filho. A consistência é mais importante que a perfeição.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo leva para fazer toda a rotina?</div>
+                <div class="faq-answer">Em média, 30 a 45 minutos. Com o tempo, você pode otimizar e fazer em menos tempo conforme pega prática.</div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>💙 Desenvolvido com amor para mães que desejam noites mais tranquilas</p>
+            <p>© 2026 - Guia da Mãe Descansada</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Salvar progresso no localStorage
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        checkboxes.forEach((checkbox, index) => {
+            // Restaurar estado salvo
+            const saved = localStorage.getItem(`checklist-${index}`);
+            if (saved) checkbox.checked = JSON.parse(saved);
+            
+            // Salvar estado ao mudar
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem(`checklist-${index}`, JSON.stringify(checkbox.checked));
+            });
+        });
+    </script>
+</body>
+</html>
