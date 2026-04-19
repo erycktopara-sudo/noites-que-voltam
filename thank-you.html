@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigada! Bem-vinda ao Noites Que Voltam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --creme:#FDF8F2; --creme2:#F5EDE0; --creme3:#EDE0CF;
+      --marrom:#2C1A0E; --marrom2:#5C3317;
+      --vermelho:#C0272D; --vermelho2:#A01F24;
+      --dourado:#C9973A; --texto:#2A1A0E; --texto2:#5A3E2B;
+      --verde:#6FCF97;
+    }
+    html { scroll-behavior: smooth; }
+    body { background:var(--creme); color:var(--texto); font-family:'DM Sans',sans-serif; font-size:17px; line-height:1.75; }
+
+    .container { max-width:720px; margin:0 auto; padding:40px 24px; }
+    
+    .hero { text-align:center; padding:80px 24px 60px; }
+    .hero-icon { font-size:5rem; margin-bottom:24px; display:block; animation:bounce 2s infinite; }
+    @keyframes bounce { 0%, 100% { transform:translateY(0); } 50% { transform:translateY(-20px); } }
+    
+    h1 { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3.2rem); line-height:1.2; color:var(--marrom); margin-bottom:16px; }
+    h1 em { font-style:italic; color:var(--verde); }
+    
+    .sub { font-size:1.1rem; color:var(--texto2); max-width:560px; margin:0 auto 40px; }
+    
+    .steps { background:var(--creme2); border-radius:8px; padding:40px 32px; margin:40px 0; }
+    .step { margin-bottom:32px; text-align:left; }
+    .step:last-child { margin-bottom:0; }
+    .step-num { display:inline-block; background:var(--vermelho); color:#fff; width:40px; height:40px; border-radius:50%; text-align:center; line-height:40px; font-weight:700; margin-right:16px; font-size:1.1rem; }
+    .step-content { display:inline-block; vertical-align:middle; max-width:calc(100% - 70px); }
+    .step-title { font-weight:700; color:var(--marrom); display:block; margin-bottom:4px; }
+    .step-desc { color:var(--texto2); font-size:.95rem; }
+    
+    .cta-box { background:var(--marrom); color:#F5E8D8; border-radius:8px; padding:48px 40px; text-align:center; margin:40px 0; }
+    .cta-box h2 { color:#F5E8D8; font-size:1.8rem; margin-bottom:16px; }
+    .cta-box p { color:#C9B49A; margin-bottom:24px; }
+    
+    .btn { display:inline-block; background:var(--verde); color:#fff; font-weight:700; font-size:1rem; letter-spacing:.07em; text-transform:uppercase; padding:18px 48px; border-radius:3px; text-decoration:none; transition:all .18s; box-shadow:0 6px 24px rgba(111,207,151,.3); }
+    .btn:hover { background:#5ab87f; transform:translateY(-2px); box-shadow:0 10px 32px rgba(111,207,151,.4); }
+    
+    .bonus { background:var(--creme2); border-left:4px solid var(--dourado); border-radius:4px; padding:28px 24px; margin:40px 0; }
+    .bonus-title { font-weight:700; color:var(--marrom); margin-bottom:8px; font-size:1.05rem; }
+    .bonus-list { list-style:none; margin-top:12px; }
+    .bonus-list li { padding:6px 0 6px 24px; position:relative; color:var(--texto2); font-size:.95rem; }
+    .bonus-list li::before { content:'✓'; position:absolute; left:0; color:var(--dourado); font-weight:700; }
+    
+    .faq { margin:40px 0; }
+    .faq-item { margin-bottom:24px; }
+    .faq-q { font-weight:700; color:var(--marrom); margin-bottom:8px; cursor:pointer; display:flex; align-items:center; }
+    .faq-q::before { content:'▶'; margin-right:12px; font-size:.8rem; transition:transform .2s; }
+    .faq-q.open::before { transform:rotate(90deg); }
+    .faq-a { color:var(--texto2); font-size:.95rem; margin-left:20px; display:none; }
+    .faq-a.open { display:block; }
+    
+    .support { background:var(--marrom); color:#F5E8D8; text-align:center; padding:40px 24px; border-radius:8px; margin:40px 0; }
+    .support h3 { color:#F5E8D8; margin-bottom:12px; font-size:1.2rem; }
+    .support p { color:#C9B49A; margin-bottom:16px; }
+    .support a { color:var(--dourado); text-decoration:none; font-weight:700; }
+    
+    footer { background:var(--marrom); color:#6B4F3A; text-align:center; padding:28px 24px; font-size:12px; line-height:1.8; margin-top:60px; }
+    
+    @media(max-width:600px) {
+      .hero { padding:60px 24px 40px; }
+      .hero-icon { font-size:3.5rem; }
+      .steps { padding:28px 20px; }
+      .step-num { width:36px; height:36px; line-height:36px; font-size:.95rem; }
+      .cta-box { padding:32px 20px; }
+      .btn { padding:16px 32px; font-size:.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-icon">🎉</span>
+    <h1>Parabéns! Você está dentro! <em>Bem-vinda ao Noites Que Voltam.</em></h1>
+    <p class="sub">Sua compra foi confirmada com sucesso. Agora suas noites de volta estão mais perto do que nunca.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="steps">
+    <div class="step">
+      <span class="step-num">1</span>
+      <div class="step-content">
+        <span class="step-title">Verifique seu email</span>
+        <span class="step-desc">Um email com seu acesso foi enviado para o endereço de compra. Procure na caixa de entrada e spam.</span>
+      </div>
+    </div>
+    
+    <div class="step">
+      <span class="step-num">2</span>
+      <div class="step-content">
+        <span class="step-title">Acesse a área de membros</span>
+        <span class="step-desc">Clique no link do email para acessar sua área de membros e baixar o guia completo.</span>
+      </div>
+    </div>
+    
+    <div class="step">
+      <span class="step-num">3</span>
+      <div class="step-content">
+        <span class="step-title">Comece hoje mesmo</span>
+        <span class="step-desc">Leia o Plano de 7 Dias e comece a aplicar ainda hoje. Resultados em poucos dias.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>Não recebeu o email?</h2>
+    <p>Sem problema! Clique no botão abaixo para acessar sua área de membros diretamente.</p>
+    <a href="https://dashboard.kiwify.com/login" class="btn">Acessar minha área</a>
+  </div>
+
+  <div class="bonus">
+    <div class="bonus-title">🎁 Você também recebeu:</div>
+    <ul class="bonus-list">
+      <li>Acesso completo ao Guia Noites Que Voltam (12 capítulos)</li>
+      <li>Plano de Ação de 7 Dias pronto para aplicar</li>
+      <li>Tabela de Janelas de Sono por idade</li>
+      <li>Guia de Sinais de Alerta (bônus exclusivo)</li>
+      <li>Acesso vitalício ao conteúdo</li>
+    </ul>
+  </div>
+
+  <div class="faq">
+    <h2 style="font-family:'Playfair Display',serif; color:var(--marrom); margin-bottom:24px; font-size:1.6rem;">Dúvidas frequentes</h2>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Como faço para acessar o conteúdo?</div>
+      <div class="faq-a">Você receberá um email com um link de acesso. Clique nele para criar sua senha e acessar a área de membros onde todo o conteúdo está disponível para download.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Posso baixar o conteúdo?</div>
+      <div class="faq-a">Sim! Todos os materiais podem ser baixados em PDF para você acessar offline, no seu celular ou imprimir se preferir.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">Quanto tempo tenho para acessar?</div>
+      <div class="faq-a">Você tem acesso vitalício! Pode acessar quando quiser, quantas vezes quiser, para sempre.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">E se não gostar? Posso devolver?</div>
+      <div class="faq-a">Claro! Você tem 7 dias de garantia. Se não estiver satisfeita, devolvemos 100% do seu dinheiro, sem perguntas.</div>
+    </div>
+  </div>
+
+  <div class="support">
+    <h3>Precisa de ajuda?</h3>
+    <p>Se tiver qualquer dúvida ou problema para acessar, entre em contato conosco.</p>
+    <p><a href="mailto:suporte@noitesquevoltam.com">📧 suporte@noitesquevoltam.com</a></p>
+  </div>
+
+  <div style="background:var(--creme2); border-radius:8px; padding:32px 24px; text-align:center; margin:40px 0;">
+    <p style="color:var(--texto2); margin-bottom:16px;">Aproveite cada momento com seu bebê. Você merece descansar.</p>
+    <p style="font-size:.9rem; color:#999;">Com carinho,<br><strong style="color:var(--marrom);">Equipe Noites Que Voltam</strong></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Noites Que Voltam. Todos os direitos reservados.</p>
+  <p>Este produto não é um substituto para aconselhamento médico profissional.</p>
+</footer>
+
+<script>
+  // Efeito de confete simples
+  function createConfetti() {
+    const confetti = document.createElement('div');
+    confetti.style.position = 'fixed';
+    confetti.style.width = '10px';
+    confetti.style.height = '10px';
+    confetti.style.backgroundColor = ['#C0272D', '#C9973A', '#6FCF97', '#2C1A0E'][Math.floor(Math.random() * 4)];
+    confetti.style.left = Math.random() * 100 + '%';
+    confetti.style.top = '-10px';
+    confetti.style.borderRadius = '50%';
+    confetti.style.pointerEvents = 'none';
+    confetti.style.zIndex = '9999';
+    document.body.appendChild(confetti);
+    
+    let top = 0;
+    const interval = setInterval(() => {
+      top += Math.random() * 5 + 2;
+      confetti.style.top = top + 'px';
+      confetti.style.opacity = 1 - (top / window.innerHeight);
+      if (top > window.innerHeight) {
+        clearInterval(interval);
+        confetti.remove();
+      }
+    }, 30);
+  }
+  
+  // Criar confete ao carregar
+  for (let i = 0; i < 30; i++) {
+    setTimeout(createConfetti, i * 30);
+  }
+</script>
+
+</body>
+</html>
